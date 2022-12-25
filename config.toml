@@ -32,6 +32,7 @@ microg-patch = "music-microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrv-magisk"
 arch = "arm64-v8a"
+merge-integrations = true
 
 [Music-arm]
 enabled = false
@@ -44,6 +45,7 @@ microg-patch = "music-microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
 module-prop-name = "ytmusicrv-arm-magisk"
 arch = "arm-v7a"
+merge-integrations = true
 
 [Twitter]
 enabled = false
