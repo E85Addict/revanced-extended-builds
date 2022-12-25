@@ -1,3 +1,5 @@
+#### ⚠️ Do not download modules from 3rd party sources like random websites you found on google. Only use this repository. I am not responsible for anything they may contain.
+
 # ReVanced Extended Magisk Module
 [![Build Modules](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/build.yml/badge.svg)](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/build.yml)
 [![CI](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/ci.yml)
