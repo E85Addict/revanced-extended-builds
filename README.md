@@ -1,4 +1,4 @@
-# ReVanced Magisk Module
+# ReVanced Extended Magisk Module
 [![Build Modules](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/build.yml/badge.svg)](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/build.yml)
 [![CI](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/E85Addict/revanced-extended-builds/actions/workflows/ci.yml)
 
