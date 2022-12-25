@@ -17,8 +17,8 @@ jobs:
         id: should_build
         shell: bash
         run: |
-          source build.conf
           source utils.sh
+          toml_prep "$(cat config.toml)"
 
           is_patches_latest() {
             declare -r last_patches_url=$(wget -nv -O- https://api.github.com/repos/inotia00/revanced-patches/releases/latest | json_get 'browser_download_url' 'jar')
