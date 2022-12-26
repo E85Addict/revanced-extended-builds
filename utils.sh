@@ -163,14 +163,16 @@ dl_uptodown() {
 	req "$url" "$output"
 }
 get_uptodown_pkg_name() {
-	req "https://${1}.en.uptodown.com/android/download" - | grep -A 1 "Package Name" | tail -1 | tr -d '</td>'
+	local p
+	p=$(req "https://${1}.en.uptodown.com/android/download" - | grep -A 1 "Package Name" | tail -1)
+	echo "${p:4:-5}"
 }
 # ------------------------------
 
 patch_apk() {
 	local stock_input=$1 patched_apk=$2 patcher_args=$3
 	declare -r tdir=$(mktemp -d -p $TEMP_DIR)
-	local cmd="java -jar $RV_CLI_JAR --temp-dir=$tdir -c -a $stock_input -o $patched_apk -b $RV_PATCHES_JAR --keystore=ks.keystore $patcher_args"
+	local cmd="java -jar $RV_CLI_JAR --rip-lib x86_64 --rip-lib x86 --temp-dir=$tdir -c -a $stock_input -o $patched_apk -b $RV_PATCHES_JAR --keystore=ks.keystore $patcher_args"
 	echo "$cmd"
 	if [ $DRYRUN = true ]; then
 		cp -f "$stock_input" "$patched_apk"
@@ -235,6 +237,14 @@ build_rv() {
 		else
 			version=$version_mode
 			patcher_args="$patcher_args --experimental"
+		fi
+		if [ "$build_mode" = module ]; then
+			if [ "${args[rip_libs]}" = true ]; then
+				# --unsigned and --rip-lib is only available in my revanced-cli builds
+				patcher_args="$patcher_args --unsigned --rip-lib arm64-v8a --rip-lib armeabi-v7a"
+			else
+				patcher_args="$patcher_args --unsigned"
+			fi
 		fi
 		if [ $get_latest_ver = true ]; then
 			if [ "$dl_from" = APKMirror ]; then
