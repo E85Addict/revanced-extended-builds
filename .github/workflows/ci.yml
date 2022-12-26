@@ -40,7 +40,7 @@ jobs:
           }
 
           is_cli_latest() {
-            declare -r last_cli_url=$(wget -nv -O- https://api.github.com/repos/inotia00/revanced-cli/releases/latest | json_get 'browser_download_url' | grep 'jar')
+            declare -r last_cli_url=$(wget -nv -O- https://api.github.com/repos/E85Addict/revanced-cli/releases/latest | json_get 'browser_download_url' | grep 'jar')
             declare -r last_cli=${last_cli_url##*/}
             cur_cli=$(sed -n 's/.*CLI: \(.*\)/\1/p' build.md | xargs)
 
