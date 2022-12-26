@@ -59,6 +59,6 @@ downloaded from: [APKMirror - YouTube](https://www.apkmirror.com/apk/google-inc/
 Music (arm64-v8a): 5.36.51
 downloaded from: [APKMirror - Music (arm64-v8a)](https://www.apkmirror.com/apk/google-inc/youtube-music/youtube-music-5-36-51-release/youtube-music-5-36-51-android-apk-download/)  
 
-Install [Vanced Microg](https://github.com/TeamVanced/VancedMicroG/releases) to be able to use non-root YouTube or Music  
+Install [Vanced Microg](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or Music  
 
 [revanced-extended-builds](https://github.com/E85Addict/revanced-extended-builds)  
