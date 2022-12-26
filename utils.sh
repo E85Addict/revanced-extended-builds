@@ -69,8 +69,9 @@ get_prebuilts() {
 }
 
 get_cmpr() {
-	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm64/cmpr" "https://github.com/j-hc/cmpr/releases/download/20220811/cmpr-arm64-v8a"
-	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm/cmpr" "https://github.com/j-hc/cmpr/releases/download/20220811/cmpr-armeabi-v7a"
+
+	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm64/cmpr" "https://github.com/j-hc/cmpr/releases/latest/download/cmpr-arm64-v8a"
+	dl_if_dne "${MODULE_TEMPLATE_DIR}/bin/arm/cmpr" "https://github.com/j-hc/cmpr/releases/latest/download/cmpr-armeabi-v7a"
 }
 
 abort() { echo "abort: $1" && exit 1; }
@@ -86,16 +87,6 @@ set_prebuilts() {
 	RV_PATCHES_JAR=$(find "$TEMP_DIR" -maxdepth 1 -name "revanced-patches-*" | tail -n1)
 	[ -z "$RV_CLI_JAR" ] && abort "revanced patches not found"
 	log "Patches: ${RV_PATCHES_JAR#"$TEMP_DIR/"}"
-}
-
-reset_template() {
-	echo "# utils" >"${MODULE_TEMPLATE_DIR}/service.sh"
-	echo "# utils" >"${MODULE_TEMPLATE_DIR}/post-fs-data.sh"
-	echo "# utils" >"${MODULE_TEMPLATE_DIR}/customize.sh"
-	echo "# utils" >"${MODULE_TEMPLATE_DIR}/uninstall.sh"
-	echo "# utils" >"${MODULE_TEMPLATE_DIR}/module.prop"
-	rm -rf ${MODULE_TEMPLATE_DIR}/*.apk
-	mkdir -p ${MODULE_TEMPLATE_DIR}/bin/arm ${MODULE_TEMPLATE_DIR}/bin/arm64
 }
 
 req() { wget -nv -O "$2" --header="$WGET_HEADER" "$1"; }
