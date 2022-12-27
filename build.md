@@ -1,36 +1,14 @@
 CLI: revanced-cli-2.18.3-all.jar  
 Integrations: app-release-unsigned-v0.87.0.apk  
-Patches: revanced-patches-2.147.2.jar  
+Patches: revanced-patches-2.147.3.jar  
 
 YouTube
 ==
-- add: `hide guidelines for subscriber` settings
-- add: `enable-old-seekbar-color` patch
-
-- fix: getActivity() is not initialized due to limitations of Fragment Lifecycle
-- fix: patch options not applied under certain circumstances
-- fix: subscribe notification button not showing
-- fix: switch `hide shorts shelf` hides unintended header layout
-- fix: app crashes when setting default video speed to `auto`
-- fix: some translations are wrong
-- fix: some switch state is wrong
-- fix: some patch names are incorrect
-
-- changed default value of SponsorBlock Mirror Server setting to OFF
-- toast messages related to SponsorBlock Mirror Server are no longer shown redundantly
-- move `enable always swipe gesture` toggle to Experimental Flags
-- `ReVanced Red`, `ReVanced Blue` icons renamed to `Afn/Red`, `Afn/Blue` (original author's request) https://github.com/inotia00/ReVanced_Extended/issues/56
-- optimize `double-back-to-close` patch
-- remove unused resources
-- additional code optimization
+- hotfix: `hide-pip-notification` patch causes pip notifications to be received repeatedly
+- fix: `custom-branding-icon-afn-red` is not set as default icon
 
 - crowdin translation update
-`Arabic`, `Azerbaijani`, `Brazilian`, `Chinese Simplified`, `Chinese Traditional`, `French`, `German`, `Greek`, `Japanese`, `Korean`, `Polish`, `Portuguese`, `Portuguese, Brazilian`, `Russian`, `Spanish`, `Turkish`, `Ukrainian`, `Vietnamese`
-
-
-ETC
-==
-- fix: PNG images are broken for unknown reason
+`Arabic`, `Chinese Simplified`, `French`, `Japanese`, `Russian`, `Spanish`, `Turkish`, `Vietnamese`
 
 ※ Compatible ReVanced Manager: v0.0.51 / v0.0.52
   
