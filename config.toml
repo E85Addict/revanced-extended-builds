@@ -12,7 +12,7 @@ build-mindetach-module = true
 [YouTube]
 enabled = true                                                        # add 'enabled = false' key to entries to not build them
 build-mode = "both"                                                   # 'both', 'apk' or 'module'
-excluded-patches = "debugging custom-branding-icon-afn-red"           # whitespace seperated list of patches to exclude
+excluded-patches = "debugging custom-branding-icon-afn-red custom-branding-name"# whitespace seperated list of patches to exclude
 included-patches = "theme custom-branding-icon-revancify"             # whitespace seperated list of patches to include
 version = "auto"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
 exclusive-patches = false                                             # excludes all patches by default
