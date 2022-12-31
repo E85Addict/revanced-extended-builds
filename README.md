@@ -23,7 +23,7 @@ Get the [latest CI release](https://github.com/E85Addict/revanced-extended-build
 #### **Note that the [CI workflow](../../actions/workflows/ci.yml) is scheduled to build the modules and APKs everyday using GitHub Actions if there is a change in ReVanced patches. You may want to disable it.**
 
 ## To include/exclude patches
-[**See the list of patches**](https://github.com/revanced/revanced-patches#-list-of-available-patches)
+[**See the list of patches**](https://github.com/inotia00/revanced-patches/tree/revanced-extended#-patches)
 
  * Star the repo :eyes:
  * [Fork the repo](https://github.com/E85Addict/revanced-extended-builds/fork) or use it as a template
