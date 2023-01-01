@@ -20,8 +20,23 @@ jobs:
           source utils.sh
           toml_prep "$(cat config.toml)"
 
+          is_youtube_latest() {
+            v=$(toml_get "YouTube" "version") || version=""
+            if [ "$v" = latest ]; then
+              declare -r cur_yt=$(sed -n 's/.*YouTube: \(.*\)/\1/p' build.md | xargs)
+              [ -z "$cur_yt" ] && return 1 # empty, fail=>dont build
+              declare -r last_ver=$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=youtube" | get_largest_ver)
+
+              echo "current yt version: $cur_yt"
+              echo "latest yt version: $last_ver"
+              [ "$cur_yt" != "$last_ver" ] # test success=>build, fail=>dont build
+            else
+              return 1 # not experimental, dont build
+            fi
+          }
+
           is_patches_latest() {
-            declare -r last_patches_url=$(wget -nv -O- https://api.github.com/repos/inotia00/revanced-patches/releases/latest | json_get 'browser_download_url' | grep 'jar')
+            declare -r last_patches_url=$(wget -nv --header="Authorization: token ${{ secrets.GITHUB_TOKEN }}" -O- https://api.github.com/repos/inotia00/revanced-patches/releases/latest | json_get 'browser_download_url' | grep 'jar')
             declare -r last_patches=${last_patches_url##*/}
             cur_patches=$(sed -n 's/.*Patches: \(.*\)/\1/p' build.md | xargs)
 
@@ -30,29 +45,10 @@ jobs:
             [ "$cur_patches" != "$last_patches" ] # test success=>build, fail=>dont build
           }
 
-          is_integrations_latest() {
-            declare -r last_integrations="app-release-unsigned-$(curl -s GET https://api.github.com/repos/inotia00/revanced-integrations/tags\?per_page\=1 | jq -r '.[].name').apk"
-            cur_integrations=$(sed -n 's/.*Integrations: \(.*\)/\1/p' build.md | xargs)
-
-            echo "current integrations version: $cur_integrations"
-            echo "latest integrations version: $last_integrations"
-            [ "$cur_integrations" != "$last_integrations" ] # test success=>build, fail=>dont build
-          }
-
-          is_cli_latest() {
-            declare -r last_cli_url=$(wget -nv -O- https://api.github.com/repos/E85Addict/revanced-cli/releases/latest | json_get 'browser_download_url' | grep 'jar')
-            declare -r last_cli=${last_cli_url##*/}
-            cur_cli=$(sed -n 's/.*CLI: \(.*\)/\1/p' build.md | xargs)
-
-            echo "current cli version: $cur_cli"
-            echo "latest cli version: $last_cli"
-            [ "$cur_cli" != "$last_cli" ] # test success=>build, fail=>dont build
-          }
-
           if ! git checkout update; then
             echo "first time building!"
             echo "SHOULD_BUILD=1" >> $GITHUB_OUTPUT
-          elif is_patches_latest || is_integrations_latest || is_cli_latest; then
+          elif is_patches_latest || is_youtube_latest; then
             echo "build!"
             echo "SHOULD_BUILD=1" >> $GITHUB_OUTPUT
           else
