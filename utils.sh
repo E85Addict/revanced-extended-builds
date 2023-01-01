@@ -182,11 +182,12 @@ zip_module() {
 
 build_rv() {
 	local -n args=$1
-	local version patcher_args build_mode_arr pkg_name uptwod_resp dl_url
+	local version patcher_args build_mode_arr pkg_name uptwod_resp
 	local mode_arg=${args[build_mode]} version_mode=${args[version]}
 	local app_name_l=${args[app_name],,}
 	local dl_from=${args[dl_from]}
 	local arch=${args[arch]}
+	local dl_url=""
 
 	if [ "$mode_arg" = module ]; then
 		build_mode_arr=(module)
