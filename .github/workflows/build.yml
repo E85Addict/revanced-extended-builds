@@ -48,7 +48,7 @@ jobs:
           fi
 
       - name: Upload modules to release
-        uses: E85Addict/upload-release-action@v3
+        uses: svenstaro/upload-release-action@master
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
