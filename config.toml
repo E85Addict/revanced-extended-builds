@@ -3,16 +3,16 @@
 [main-config]
 compression-level = 9         # compression level for module zips. between 1 and 9
 enable-magisk-update = true   # set this to false if you do not want to receive updates from magisk app
-parallel-jobs = 3             # max number of concurrent building jobs
+parallel-jobs = 6             # max number of concurrent building jobs
 update-prebuilts = true       # dont touch this
 build-mindetach-module = true
 
 
-[YouTube]
+[YouTube-Revancify]
 enabled = true                                                        # add 'enabled = false' key to entries to not build them
 build-mode = "both"                                                   # 'both', 'apk' or 'module'
 excluded-patches = "debugging custom-branding-icon-afn-red custom-branding-name"# whitespace seperated list of patches to exclude
-included-patches = "theme custom-branding-icon-revancify"             # whitespace seperated list of patches to include
+included-patches = "custom-branding-icon-revancify"             # whitespace seperated list of patches to include
 version = "auto"                                                      # 'auto', 'latest' or a custom one like '17.40.41'
 exclusive-patches = false                                             # excludes all patches by default
 microg-patch = "microg-support"
@@ -21,11 +21,37 @@ module-prop-name = "ytrv-magisk"
 merge-integrations = true
 rip-libs = true
 
-[Music-arm64]
+[YouTube-Red]
+enabled = true 
+build-mode = "both"
+excluded-patches = "debugging custom-branding-icon-revancify custom-branding-name"
+included-patches = "custom-branding-icon-afn-red"
+version = "auto"
+exclusive-patches = false
+microg-patch = "microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+module-prop-name = "ytrvr-magisk"
+merge-integrations = true
+rip-libs = true
+
+[YouTube-Blue]
+enabled = true
+build-mode = "both"
+excluded-patches = "debugging custom-branding-icon-afn-red  custom-branding-icon-revancify custom-branding-name"
+included-patches = "custom-branding-icon-afn-blue"
+version = "auto"  
+exclusive-patches = false
+microg-patch = "microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
+module-prop-name = "ytrvb-magisk"
+merge-integrations = true
+rip-libs = true
+
+[Music-arm64-Revancify]
 enabled = true
 build-mode = "both"
 app-name = "Music"
-excluded-patches = "custom-branding-music-red"
+excluded-patches = "custom-branding-music-red custom-branding-music-blue"
 included-patches = "custom-branding-music-revancify"
 version = "auto"
 microg-patch = "music-microg-support"
@@ -34,12 +60,38 @@ module-prop-name = "ytmusicrv-magisk"
 arch = "arm64-v8a"
 merge-integrations = true
 
-[Music-arm]
+[Music-arm64-Red]
+enabled = true
+build-mode = "both"
+app-name = "Music"
+excluded-patches = "custom-branding-music-blue custom-branding-music-revancify"
+included-patches = "custom-branding-music-red"
+version = "auto"
+microg-patch = "music-microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+module-prop-name = "ytmusicrvr-magisk"
+arch = "arm64-v8a"
+merge-integrations = true
+
+[Music-arm64-Blue]
+enabled = true
+build-mode = "both"
+app-name = "Music"
+excluded-patches = "custom-branding-music-red custom-branding-music-revancify"
+included-patches = "custom-branding-music-blue"
+version = "auto"
+microg-patch = "music-microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+module-prop-name = "ytmusicrvb-magisk"
+arch = "arm64-v8a"
+merge-integrations = true
+
+[Music-arm-Revancify]
 enabled = false
 build-mode = "both"
 app-name = "Music"
-excluded-patches = ""
-included-patches = ""
+excluded-patches = "custom-branding-music-red custom-branding-music-blue"
+included-patches = "custom-branding-music-revancify"
 version = "auto"
 microg-patch = "music-microg-support"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
@@ -47,58 +99,28 @@ module-prop-name = "ytmusicrv-arm-magisk"
 arch = "arm-v7a"
 merge-integrations = true
 
-[Twitter]
-enabled = false
-build-mode = "apk"
-excluded-patches = ""
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/twitter-inc/twitter/"
-
-[Reddit]
-enabled = false
-build-mode = "apk"
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
-
-[Twitch]
+[Music-arm-Red]
 enabled = false
 build-mode = "both"
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
+app-name = "Music"
+excluded-patches = "custom-branding-music-blue custom-branding-music-revancify"
+included-patches = "custom-branding-music-red"
+version = "auto"
+microg-patch = "music-microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+module-prop-name = "ytmusicrvr-arm-magisk"
+arch = "arm-v7a"
 merge-integrations = true
 
-[Tiktok]
+[Music-arm-Blue]
 enabled = false
 build-mode = "both"
-version = "27.2.5"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/"
+app-name = "Music"
+excluded-patches = "custom-branding-music-red custom-branding-music-revancify"
+included-patches = "custom-branding-music-blue"
+version = "auto"
+microg-patch = "music-microg-support"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+module-prop-name = "ytmusicrvb-arm-magisk"
+arch = "arm-v7a"
 merge-integrations = true
-
-[Spotify]
-enabled = false
-build-mode = "apk"
-version = "latest"
-
-[TickTick]
-enabled = false
-build-mode = "apk"
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/appest-inc/ticktick-to-do-list-with-reminder-day-planner/"
-
-[WarnWetter]
-enabled = false
-version = "latest"
-build-mode = "apk"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/appest-inc/deutscher-wetterdienst/warnwetter/"
-
-[Backdrops]
-enabled = false
-build-mode = "apk"
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/backdrops/backdrops-wallpapers/"
-
-[Windy]
-enabled = false
-build-mode = "apk"
-version = "latest"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/windy-weather-world-inc/windy-wind-weather-forecast/"
