@@ -18,11 +18,13 @@ ETC
 ※ If you report an issue using ReVanced Extended v18.01.32 to the [issue report repo](https://github.com/inotia00/ReVanced_Extended), please add the label `(beta)`
   
 **App Versions:**  
+YouTube-Red: 17.49.37
+downloaded from: [APKMirror - YouTube-Red](https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-49-37-release/youtube-17-49-37-2-android-apk-download/)  
+YouTube-Blue: 17.49.37
+downloaded from: [APKMirror - YouTube-Blue](https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-49-37-release/youtube-17-49-37-2-android-apk-download/)  
+YouTube-Revancify: 17.49.37
+downloaded from: [APKMirror - YouTube-Revancify](https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-49-37-release/youtube-17-49-37-2-android-apk-download/)  
 Music (arm64-v8a): 5.36.51
 downloaded from: [APKMirror - Music (arm64-v8a)](https://www.apkmirror.com/apk/google-inc/youtube-music/youtube-music-5-36-51-release/youtube-music-5-36-51-android-apk-download/)  
-YouTube: 17.49.37
-downloaded from: [APKMirror - YouTube](https://www.apkmirror.com/apk/google-inc/youtube/youtube-17-49-37-release/youtube-17-49-37-2-android-apk-download/)  
-
-Install [Vanced Microg](https://github.com/inotia00/VancedMicroG/releases) to be able to use non-root YouTube or Music  
 
 [revanced-extended-builds](https://github.com/E85Addict/revanced-extended-builds)  
