@@ -48,7 +48,7 @@ jobs:
           fi
 
       - name: Upload modules to release
-        uses: svenstaro/upload-release-action@master
+        uses: svenstaro/upload-release-action@v2
         with:
           body: ${{ steps.get_output.outputs.BUILD_LOG }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
